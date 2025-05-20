@@ -1,0 +1,6 @@
+return Array.from(document.querySelectorAll('a.css-1tqlkj0')).map(el => el.getAttribute('href')) || [];
+
+const xpathResult = document.evaluate('//div[@data-cy="ad-card-title"]/a', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+Array.from({ length: xp.snapshotLength }, (_, i) => xp.snapshotItem(i).getAttribute('href'));
+
+

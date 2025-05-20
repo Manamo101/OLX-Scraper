@@ -1,0 +1,153 @@
+{
+  "id": "fbdef2e6-f25f-498a-8a0e-dbb626adf535",
+  "version": "2.0",
+  "name": "zdpp_lab11",
+  "url": "https://www.olx.pl/nieruchomosci/mieszkania/wroclaw",
+  "tests": [{
+    "id": "d9a278fe-287c-401b-b30f-3440d7ccf02b",
+    "name": "oglądanie kawalerek",
+    "commands": [{
+      "id": "449765c7-c0a0-4a96-9de6-0947d6e82f8f",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/wroclaw/?search%5Border%5D=created_at:desc&search%5Bfilter_enum_builttype%5D%5B0%5D=blok&search%5Bfilter_enum_market%5D%5B0%5D=primary",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14d28ca3-3562-4538-bfc2-a5ef4711a381",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x644",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c0776a4-d5e3-4206-97b0-fce50e85ee94",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-7xjci5:nth-child(7) .multi-select-head",
+      "targets": [
+        ["css=.css-7xjci5:nth-child(7) .multi-select-head", "css:finder"],
+        ["xpath=//div[@id='mainContent']/div/div[3]/form/div[3]/div/div/div[7]/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e1aae98-03e4-4116-a32f-08fa566bc19b",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,400)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e9aba54-a8f5-40c4-895a-4d1b3ad6d1f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-j1l9xo > .css-18en6lo",
+      "targets": [
+        ["css=.css-j1l9xo > .css-18en6lo", "css:finder"],
+        ["xpath=//div[@id='mainContent']/div/div[3]/form/div[3]/div[4]/div/div/div/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/div/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Wybrane dla Ciebie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3001e82e-5955-43af-913b-7f1c0f0fca6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-19sejbr:nth-child(2)",
+      "targets": [
+        ["css=.css-19sejbr:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='mainContent']/div/div[3]/form/div[3]/div[4]/div/div/div/div/div/div[2]/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c40c313-b03f-4606-891c-22c9d5fe6661",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b409b1e-6e2e-4ea9-a327-b1daa1552f60",
+      "comment": "",
+      "command": "//executeScript",
+      "target": "return Array.from(document.evaluate('//div[@data-cy=\"ad-card-title\"]/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null)).map(el => el.getAttribute('href')) || [];",
+      "targets": [],
+      "value": "mieszkania"
+    }, {
+      "id": "2e2e64f9-a8d7-478b-981b-c434485ca458",
+      "comment": "",
+      "command": "executeScript",
+      "target": "const xp = document.evaluate('//div[@data-cy=\"ad-card-title\"]/a', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null); return Array.from({ length: xp.snapshotLength }, (_, i) => xp.snapshotItem(i).getAttribute('href'));",
+      "targets": [],
+      "value": "mieszkania"
+    }, {
+      "id": "85428b85-812a-4f29-984b-4a194802b652",
+      "comment": "",
+      "command": "echo",
+      "target": "${mieszkania}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0a970af-c59e-4cc8-8110-995d74cb1d59",
+      "comment": "",
+      "command": "forEach",
+      "target": "mieszkania",
+      "targets": [],
+      "value": "link"
+    }, {
+      "id": "e4e50dcd-a126-4bd5-a2b3-875dd72a2505",
+      "comment": "",
+      "command": "open",
+      "target": "${link}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9df90a92-da76-4d0f-89c3-877f2d4b867f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.title;",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "db846143-338f-4765-a832-05abc5fed64e",
+      "comment": "",
+      "command": "echo",
+      "target": "'link: ${link}'",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03f78c6c-ab9d-4fde-9cfd-2c0b53eac1b8",
+      "comment": "",
+      "command": "echo",
+      "target": "'title: ${title}'",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6b3eb74-4ae1-4482-b235-76b9f6bdfd94",
+      "comment": "",
+      "command": "executeScript",
+      "target": "history.back()",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11abc64f-2694-4d30-8767-e4cadbd7eec0",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "04451fd4-d48d-41bf-b70e-9d6a88d95f93",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d9a278fe-287c-401b-b30f-3440d7ccf02b"]
+  }],
+  "urls": ["https://www.olx.pl/nieruchomosci/mieszkania/wroclaw"],
+  "plugins": []
+}

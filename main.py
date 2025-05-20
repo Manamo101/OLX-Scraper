@@ -21,7 +21,7 @@ def modified_offers(offers_set: set[Offer], previous_offers: set[Offer]) -> set[
 
 if __name__ == "__main__":
     options = Options()
-    options.add_argument('--headless')  # Run in headless mode
+    # options.add_argument('--headless')  # Run in headless mode
     driver = webdriver.Chrome(options=options)
 
     # Navigate to the URL
